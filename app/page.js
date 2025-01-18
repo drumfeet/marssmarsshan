@@ -16,6 +16,9 @@ import {
   Music2,
   CloudRain,
   Code,
+  Linkedin,
+  Video,
+  AudioLines,
 } from "lucide-react"
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
@@ -24,46 +27,59 @@ export default function Home() {
   const mainSocialLinks = [
     {
       icon: <Facebook className="w-6 h-6" />,
-      href: "#",
+      href: "https://www.facebook.com/marssmarsshan",
+      color: "text-[#4267B2]",
+    },
+    {
+      icon: <Facebook className="w-6 h-6" />,
+      href: "https://www.facebook.com/marssmarsshans",
       color: "text-[#4267B2]",
     },
     {
       icon: <Twitter className="w-6 h-6" />,
-      href: "#",
+      href: "https://x.com/marssmarsshan",
       color: "text-[#1DA1F2]",
     },
     {
       icon: <Instagram className="w-6 h-6" />,
-      href: "#",
+      href: "https://www.instagram.com/marssmarsshan",
       color: "text-[#E4405F]",
     },
     {
       icon: <Youtube className="w-6 h-6" />,
-      href: "#",
+      href: "https://www.youtube.com/ethanronoelsalazar",
       color: "text-[#FF0000]",
     },
     {
       icon: <Spotify className="w-6 h-6" />,
-      href: "#",
+      href: "https://open.spotify.com/artist/7LrUyckRcDq8ziPFvsjgjG",
       color: "text-[#1DB954]",
     },
-    { icon: <Github className="w-6 h-6" />, href: "#", color: "text-[#333]" },
+    {
+      icon: <Github className="w-6 h-6" />,
+      href: "http://github.com/drumfeet",
+      color: "text-[#333]",
+    },
+    {
+      icon: <Linkedin className="w-6 h-6" />,
+      href: "https://www.linkedin.com/in/ethanronoelsalazar",
+      color: "text-[#0077B5]",
+    },
   ]
 
   const otherLinks = [
+    { icon: <Code />, label: "drumfeet Dev", href: "#" },
     { icon: <Discord />, label: "Discord", href: "#" },
     { icon: <Send />, label: "Telegram", href: "#" },
-    { icon: <Code />, label: "Drumfeet Dev", href: "#" },
-    { icon: <CloudRain />, label: "Marssmarsshan", href: "#" },
     { icon: <Music2 />, label: "Fizzles", href: "#" },
     { icon: <Music2 />, label: "Forgetful Bob", href: "#" },
-    { icon: <Calendar />, label: "Schedule Meeting", href: "#" },
-    { icon: <Heart />, label: "Donate", href: "#" },
     { icon: <TrendingUp />, label: "TradingView", href: "#" },
     { icon: <Twitch />, label: "Twitch", href: "#" },
-    { icon: <Music2 />, label: "Odysee", href: "#" },
-    { icon: <Music2 />, label: "SoundCloud", href: "#" },
-    { icon: <Music2 />, label: "Audius", href: "#" },
+    { icon: <Video />, label: "Odysee", href: "#" },
+    { icon: <CloudRain />, label: "SoundCloud", href: "#" },
+    { icon: <AudioLines />, label: "Audius", href: "#" },
+    { icon: <Heart />, label: "Donate", href: "#" },
+    { icon: <Calendar />, label: "Schedule Meeting", href: "#" },
   ]
 
   return (
@@ -75,16 +91,16 @@ export default function Home() {
             <div className="relative w-48 h-48 mx-auto mb-8">
               <Image
                 src="/marssmarsshan.jpg?q=80&w=400&h=400&fit=crop"
-                alt="Eren Clarise"
+                alt="Ethan Ronoel Salazar"
                 fill
                 className="object-cover border-4 border-black"
                 priority
               />
             </div>
             <h1 className="text-6xl font-bold mb-4 font-['Comic_Sans_MS']">
-              Eren Clarise
+              Ethan Ronoel Salazar
             </h1>
-            <p className="text-2xl mb-6 font-mono">@erenclarise</p>
+            <p className="text-2xl mb-6 font-mono">@marssmarsshan</p>
             <p className="text-lg max-w-2xl mx-auto font-mono">
               Software Development. Music. Drums. Cycling. Tech. Blockchain.
               Crypto. Technical Analysis.
@@ -93,7 +109,7 @@ export default function Home() {
         </div>
 
         {/* Main Social Icons */}
-        <div className="flex justify-center gap-6 mb-12">
+        <div className="flex flex-wrap justify-center gap-8 mb-12">
           {mainSocialLinks.map((link, index) => (
             <a
               key={index}
@@ -111,7 +127,7 @@ export default function Home() {
         <div className="mb-12">
           <Card className="p-6 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <h2 className="text-2xl font-bold mb-4 font-['Comic_Sans_MS']">
-              Featured Videos
+              {/* Featured Videos */}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {["jjMAc-dN41s", "x-k3cEYZ12s", "C1evtYt84pY"].map((videoId) => (
