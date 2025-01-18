@@ -5,10 +5,9 @@ import {
   Twitter,
   Instagram,
   Youtube,
-  AlignJustify as Spotify,
-  Linkedin,
+  AirplayIcon as Spotify,
   Github,
-  Disc as Discord,
+  DiscIcon as Discord,
   Send,
   Calendar,
   Heart,
@@ -93,21 +92,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Video Section */}
-        {/* <div className="bg-white border-4 border-black shadow-[8px_8px_0_0_rgba(0,0,0,1)] p-4 mb-12">
-          <div className="aspect-video">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/5C26Oh6syf0"
-              title="YouTube video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="border-2 border-black"
-            />
-          </div>
-        </div> */}
-
         {/* Main Social Icons */}
         <div className="flex justify-center gap-6 mb-12">
           {mainSocialLinks.map((link, index) => (
@@ -147,17 +131,17 @@ export default function Home() {
         </div>
 
         {/* Other Links */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {otherLinks.map((link, index) => (
             <a
               key={index}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white border-4 border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all p-4 flex items-center gap-3 font-mono"
+              className="bg-white border-4 border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all p-4 flex items-center gap-3 font-mono text-sm overflow-hidden"
             >
-              {link.icon}
-              <span>{link.label}</span>
+              <span className="flex-shrink-0">{link.icon}</span>
+              <span className="truncate flex-grow min-w-0">{link.label}</span>
             </a>
           ))}
         </div>
