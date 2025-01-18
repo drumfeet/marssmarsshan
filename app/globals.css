@@ -70,3 +70,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* 90s Grid Pattern */
+.pattern-grid-lg {
+  background-image: radial-gradient(circle at center, #ff6b6b 1px, transparent 1px);
+  background-size: 24px 24px;
+}

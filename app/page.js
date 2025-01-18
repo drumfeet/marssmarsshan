@@ -1,101 +1,143 @@
-import Image from "next/image";
+"use client"
+
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Youtube,
+  AlignJustify as Spotify,
+  Linkedin,
+  Github,
+  Disc as Discord,
+  Send,
+  Calendar,
+  Heart,
+  TrendingUp,
+  Twitch,
+  Music2,
+  CloudRain,
+  Code,
+} from "lucide-react"
+import Image from "next/image"
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const mainSocialLinks = [
+    {
+      icon: <Facebook className="w-6 h-6" />,
+      href: "#",
+      color: "text-[#4267B2]",
+    },
+    {
+      icon: <Twitter className="w-6 h-6" />,
+      href: "#",
+      color: "text-[#1DA1F2]",
+    },
+    {
+      icon: <Instagram className="w-6 h-6" />,
+      href: "#",
+      color: "text-[#E4405F]",
+    },
+    {
+      icon: <Youtube className="w-6 h-6" />,
+      href: "#",
+      color: "text-[#FF0000]",
+    },
+    {
+      icon: <Spotify className="w-6 h-6" />,
+      href: "#",
+      color: "text-[#1DB954]",
+    },
+    { icon: <Github className="w-6 h-6" />, href: "#", color: "text-[#333]" },
+  ]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const otherLinks = [
+    { icon: <Discord />, label: "Discord", href: "#" },
+    { icon: <Send />, label: "Telegram", href: "#" },
+    { icon: <Code />, label: "Drumfeet Dev", href: "#" },
+    { icon: <CloudRain />, label: "Marssmarsshan", href: "#" },
+    { icon: <Music2 />, label: "Fizzles", href: "#" },
+    { icon: <Music2 />, label: "Forgetful Bob", href: "#" },
+    { icon: <Calendar />, label: "Schedule Meeting", href: "#" },
+    { icon: <Heart />, label: "Donate", href: "#" },
+    { icon: <TrendingUp />, label: "TradingView", href: "#" },
+    { icon: <Twitch />, label: "Twitch", href: "#" },
+    { icon: <Music2 />, label: "Odysee", href: "#" },
+    { icon: <Music2 />, label: "SoundCloud", href: "#" },
+    { icon: <Music2 />, label: "Audius", href: "#" },
+  ]
+
+  return (
+    <main className="min-h-screen bg-[#fdfd96] pattern-grid-lg">
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        {/* Profile Section */}
+        <div className="bg-white border-4 border-black shadow-[8px_8px_0_0_rgba(0,0,0,1)] p-8 mb-12">
+          <div className="text-center">
+            <div className="relative w-48 h-48 mx-auto mb-8">
+              <Image
+                src="/marssmarsshan.jpg?q=80&w=400&h=400&fit=crop"
+                alt="Eren Clarise"
+                fill
+                className="object-cover border-4 border-black"
+                priority
+              />
+            </div>
+            <h1 className="text-6xl font-bold mb-4 font-['Comic_Sans_MS']">
+              Eren Clarise
+            </h1>
+            <p className="text-2xl mb-6 font-mono">@erenclarise</p>
+            <p className="text-lg max-w-2xl mx-auto font-mono">
+              Software Development. Music. Drums. Cycling. Tech. Blockchain.
+              Crypto. Technical Analysis.
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+
+        {/* Video Section */}
+        <div className="bg-white border-4 border-black shadow-[8px_8px_0_0_rgba(0,0,0,1)] p-4 mb-12">
+          <div className="aspect-video">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/5C26Oh6syf0"
+              title="YouTube video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="border-2 border-black"
+            />
+          </div>
+        </div>
+
+        {/* Main Social Icons */}
+        <div className="flex justify-center gap-6 mb-12">
+          {mainSocialLinks.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${link.color} transform hover:scale-125 transition-transform duration-200`}
+            >
+              {link.icon}
+            </a>
+          ))}
+        </div>
+
+        {/* Other Links */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {otherLinks.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white border-4 border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all p-4 flex items-center gap-3 font-mono"
+            >
+              {link.icon}
+              <span>{link.label}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </main>
+  )
 }
