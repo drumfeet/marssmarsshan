@@ -19,6 +19,7 @@ import {
   Code,
 } from "lucide-react"
 import Image from "next/image"
+import { Card } from "@/components/ui/card"
 
 export default function Home() {
   const mainSocialLinks = [
@@ -93,7 +94,7 @@ export default function Home() {
         </div>
 
         {/* Video Section */}
-        <div className="bg-white border-4 border-black shadow-[8px_8px_0_0_rgba(0,0,0,1)] p-4 mb-12">
+        {/* <div className="bg-white border-4 border-black shadow-[8px_8px_0_0_rgba(0,0,0,1)] p-4 mb-12">
           <div className="aspect-video">
             <iframe
               width="100%"
@@ -105,7 +106,7 @@ export default function Home() {
               className="border-2 border-black"
             />
           </div>
-        </div>
+        </div> */}
 
         {/* Main Social Icons */}
         <div className="flex justify-center gap-6 mb-12">
@@ -120,6 +121,29 @@ export default function Home() {
               {link.icon}
             </a>
           ))}
+        </div>
+
+        {/* Videos Section */}
+        <div className="mb-12">
+          <Card className="p-6 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <h2 className="text-2xl font-bold mb-4 font-['Comic_Sans_MS']">
+              Featured Videos
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {["jjMAc-dN41s", "x-k3cEYZ12s", "C1evtYt84pY"].map((videoId) => (
+                <div key={videoId} className="aspect-video">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${videoId}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="border-2 border-black"
+                  />
+                </div>
+              ))}
+            </div>
+          </Card>
         </div>
 
         {/* Other Links */}
