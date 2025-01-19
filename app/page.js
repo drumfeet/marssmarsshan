@@ -5,9 +5,9 @@ import {
   Twitter,
   Instagram,
   Youtube,
-  AirplayIcon as Spotify,
+  Music as Spotify,
   Github,
-  DiscIcon as Discord,
+  MessageCircleMore as Discord,
   Send,
   Calendar,
   Heart,
@@ -68,18 +68,46 @@ export default function Home() {
   ]
 
   const otherLinks = [
-    { icon: <Code />, label: "drumfeet Dev", href: "#" },
-    { icon: <Discord />, label: "Discord", href: "#" },
-    { icon: <Send />, label: "Telegram", href: "#" },
-    { icon: <Music2 />, label: "Fizzles", href: "#" },
-    { icon: <Music2 />, label: "Forgetful Bob", href: "#" },
-    { icon: <TrendingUp />, label: "TradingView", href: "#" },
-    { icon: <Twitch />, label: "Twitch", href: "#" },
-    { icon: <Video />, label: "Odysee", href: "#" },
-    { icon: <CloudRain />, label: "SoundCloud", href: "#" },
-    { icon: <AudioLines />, label: "Audius", href: "#" },
-    { icon: <Heart />, label: "Donate", href: "#" },
-    { icon: <Calendar />, label: "Schedule Meeting", href: "#" },
+    {
+      icon: <Code />,
+      label: "drumfeet Dev",
+      href: "https://drumfeet.arweave.dev",
+    },
+    { icon: <Discord />, label: "Discord", href: "/discord" },
+    { icon: <Send />, label: "Telegram", href: "/telegram" },
+    { icon: <Music2 />, label: "Fizzles", href: "https://fizzlesmusic.com" },
+    {
+      icon: <Music2 />,
+      label: "Forgetful Bob",
+      href: "https://forgetfulbob.com",
+    },
+    {
+      icon: <TrendingUp />,
+      label: "TradingView",
+      href: "https://www.tradingview.com/u/marssmarsshan",
+    },
+    {
+      icon: <Twitch />,
+      label: "Twitch",
+      href: "https://www.twitch.tv/marssmarsshan",
+    },
+    {
+      icon: <Video />,
+      label: "Odysee",
+      href: "https://odysee.com/@marssmarsshan:c",
+    },
+    {
+      icon: <CloudRain />,
+      label: "SoundCloud",
+      href: "https://soundcloud.com/marssmarsshan",
+    },
+    {
+      icon: <AudioLines />,
+      label: "Audius",
+      href: "https://audius.co/marssmarsshan",
+    },
+    { icon: <Heart />, label: "Post a comment", href: "/post" },
+    { icon: <Calendar />, label: "Schedule Meeting", href: "/meet" },
   ]
 
   return (
@@ -97,7 +125,7 @@ export default function Home() {
                 priority
               />
             </div>
-            <h1 className="text-6xl font-bold mb-4 font-['Comic_Sans_MS']">
+            <h1 className="text-6xl font-bold mb-4 font-mono">
               Ethan Ronoel Salazar
             </h1>
             <p className="text-2xl mb-6 font-mono">@marssmarsshan</p>
