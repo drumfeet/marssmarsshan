@@ -1,0 +1,178 @@
+"use client"
+
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import {
+  Github,
+  Twitter,
+  Instagram,
+  Youtube,
+  Linkedin,
+  MessageCircle,
+  Music2,
+  Calendar,
+  Heart,
+  TrendingUp,
+  Twitch,
+  Cloud,
+  Code,
+  Facebook,
+  Send,
+} from "lucide-react"
+import Image from "next/image"
+
+export default function Home() {
+  const socialLinks = [
+    { icon: <Facebook />, href: "#", label: "Facebook" },
+    { icon: <Facebook />, href: "#", label: "Facebook Alt" },
+    { icon: <Twitter />, href: "#", label: "Twitter" },
+    { icon: <Instagram />, href: "#", label: "Instagram" },
+    { icon: <Youtube />, href: "#", label: "YouTube" },
+    { icon: <Music2 />, href: "#", label: "Spotify" },
+    { icon: <Linkedin />, href: "#", label: "LinkedIn" },
+    { icon: <Github />, href: "#", label: "GitHub" },
+    { icon: <MessageCircle />, href: "#", label: "Discord" },
+    { icon: <Send />, href: "#", label: "Telegram" },
+    { icon: <Code />, href: "#", label: "Drumfeet Dev" },
+    { icon: <Twitch />, href: "#", label: "Twitch" },
+    { icon: <Cloud />, href: "#", label: "Soundcloud" },
+    { icon: <Music2 />, href: "#", label: "Audius" },
+  ]
+
+  return (
+    <main className="min-h-screen bg-[#1a1a2e] p-4 md:p-8 font-mono">
+      <div
+        className="max-w-5xl mx-auto rounded-lg border-4 border-[#ff2e63] p-6 md:p-8"
+        style={{
+          backgroundImage:
+            "linear-gradient(45deg, #1a1a2e 25%, #252542 25%, #252542 50%, #1a1a2e 50%, #1a1a2e 75%, #252542 75%, #252542 100%)",
+          backgroundSize: "56.57px 56.57px",
+          boxShadow: "0 0 20px #ff2e63, inset 0 0 20px #ff2e63",
+        }}
+      >
+        {/* Header */}
+        <div className="text-center mb-8 animate-pulse">
+          <h1
+            className="text-4xl md:text-6xl font-bold text-[#ff2e63] mb-2"
+            style={{ textShadow: "0 0 10px #ff2e63, 0 0 20px #ff2e63" }}
+          >
+            EREN CLARISE
+          </h1>
+          <p className="text-[#08d9d6] text-xl">@erenclarise</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Profile Section */}
+          <div className="space-y-6">
+            <Card className="bg-[#252542] border-2 border-[#08d9d6] p-4">
+              <div className="relative w-full aspect-square mb-4">
+                <Image
+                  src="/marssmarsshan.jpg?q=80&w=388&auto=format&fit=crop"
+                  alt="Eren Clarise"
+                  fill
+                  className="object-cover border-2 border-[#ff2e63]"
+                />
+              </div>
+              <p className="text-[#e5e5e5] text-sm leading-relaxed">
+                Software Development. Music. Drums. Cycling. Tech. Blockchain.
+                Crypto. Technical Analysis.
+              </p>
+            </Card>
+
+            {/* Quick Links */}
+            <div className="space-y-2">
+              {["Schedule Meeting", "Donate", "TradingView"].map(
+                (action, index) => (
+                  <Button
+                    key={action}
+                    className="w-full bg-[#252542] text-[#08d9d6] border-2 border-[#08d9d6] hover:bg-[#1a1a2e] hover:text-[#ff2e63] hover:border-[#ff2e63] transition-all duration-300"
+                  >
+                    {index === 0 ? (
+                      <Calendar className="mr-2" />
+                    ) : index === 1 ? (
+                      <Heart className="mr-2" />
+                    ) : (
+                      <TrendingUp className="mr-2" />
+                    )}
+                    {action}
+                  </Button>
+                )
+              )}
+            </div>
+          </div>
+
+          {/* Main Content */}
+          <div className="col-span-1 md:col-span-2 space-y-8">
+            {/* Videos */}
+            <div className="space-y-4">
+              <h2
+                className="text-[#ff2e63] text-2xl font-bold mb-4 border-b-2 border-[#ff2e63] pb-2"
+                style={{ textShadow: "0 0 5px #ff2e63" }}
+              >
+                FEATURED VIDEOS
+              </h2>
+              {["jjMAc-dN41s", "x-k3cEYZ12s", "C1evtYt84pY"].map((videoId) => (
+                <div
+                  key={videoId}
+                  className="aspect-video border-2 border-[#08d9d6]"
+                >
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${videoId}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Projects */}
+            <div>
+              <h2
+                className="text-[#ff2e63] text-2xl font-bold mb-4 border-b-2 border-[#ff2e63] pb-2"
+                style={{ textShadow: "0 0 5px #ff2e63" }}
+              >
+                PROJECTS
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {["Marssmarsshan", "Fizzles", "Forgetful Bob"].map(
+                  (project) => (
+                    <Button
+                      key={project}
+                      className="bg-[#252542] text-[#08d9d6] border-2 border-[#08d9d6] hover:bg-[#1a1a2e] hover:text-[#ff2e63] hover:border-[#ff2e63] transition-all duration-300"
+                    >
+                      <Code className="mr-2" /> {project}
+                    </Button>
+                  )
+                )}
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div>
+              <h2
+                className="text-[#ff2e63] text-2xl font-bold mb-4 border-b-2 border-[#ff2e63] pb-2"
+                style={{ textShadow: "0 0 5px #ff2e63" }}
+              >
+                CONNECT
+              </h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {socialLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.href}
+                    className="flex items-center gap-2 p-3 bg-[#252542] text-[#08d9d6] border-2 border-[#08d9d6] rounded hover:bg-[#1a1a2e] hover:text-[#ff2e63] hover:border-[#ff2e63] transition-all duration-300"
+                  >
+                    {link.icon}
+                    <span>{link.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  )
+}

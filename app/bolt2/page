@@ -1,0 +1,153 @@
+"use client"
+
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
+import {
+  Github,
+  Twitter,
+  Instagram,
+  Youtube,
+  Linkedin,
+  MessageCircle,
+  Music2,
+  Calendar,
+  Heart,
+  TrendingUp,
+  Twitch,
+  Cloud,
+  Code,
+  Facebook,
+  Send,
+} from "lucide-react"
+import Image from "next/image"
+
+export default function Home() {
+  const socialLinks = [
+    { icon: <Facebook />, href: "#", label: "Facebook" },
+    { icon: <Facebook />, href: "#", label: "Facebook Alt" },
+    { icon: <Twitter />, href: "#", label: "Twitter" },
+    { icon: <Instagram />, href: "#", label: "Instagram" },
+    { icon: <Youtube />, href: "#", label: "YouTube" },
+    { icon: <Music2 />, href: "#", label: "Spotify" },
+    { icon: <Linkedin />, href: "#", label: "LinkedIn" },
+    { icon: <Github />, href: "#", label: "GitHub" },
+    { icon: <MessageCircle />, href: "#", label: "Discord" },
+    { icon: <Send />, href: "#", label: "Telegram" },
+    { icon: <Code />, href: "#", label: "Drumfeet Dev" },
+    { icon: <Twitch />, href: "#", label: "Twitch" },
+    { icon: <Cloud />, href: "#", label: "Soundcloud" },
+    { icon: <Music2 />, href: "#", label: "Audius" },
+  ]
+
+  return (
+    <main className="min-h-screen bg-[#FFE4E1] p-4 md:p-8">
+      <div className="max-w-4xl mx-auto space-y-8">
+        {/* Profile Section */}
+        <Card className="p-6 border-4 border-[#FF69B4] bg-white shadow-[8px_8px_0px_0px_rgba(255,105,180)]">
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="relative w-32 h-32 md:w-48 md:h-48">
+              <Image
+                src="/marssmarsshan.jpg?q=80&w=388&auto=format&fit=crop"
+                alt="Eren Clarise"
+                fill
+                className="rounded-full object-cover border-4 border-[#FF69B4]"
+              />
+            </div>
+            <div className="text-center md:text-left">
+              <h1 className="text-4xl font-bold text-[#FF1493] mb-2">
+                Eren Clarise
+              </h1>
+              <p className="text-lg text-gray-600 mb-2">@erenclarise</p>
+              <p className="text-gray-700">
+                Software Development. Music. Drums. Cycling. Tech. Blockchain.
+                Crypto. Technical Analysis.
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        {/* Videos Section */}
+        <Card className="p-6 border-4 border-[#FF69B4] bg-white shadow-[8px_8px_0px_0px_rgba(255,105,180)]">
+          <h2 className="text-2xl font-bold text-[#FF1493] mb-4">
+            Featured Videos
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {["jjMAc-dN41s", "x-k3cEYZ12s", "C1evtYt84pY"].map((videoId) => (
+              <div key={videoId} className="aspect-video">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={`https://www.youtube.com/embed/${videoId}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="border-2 border-[#FF69B4]"
+                />
+              </div>
+            ))}
+          </div>
+        </Card>
+
+        {/* Social Links */}
+        <Card className="p-6 border-4 border-[#FF69B4] bg-white shadow-[8px_8px_0px_0px_rgba(255,105,180)]">
+          <h2 className="text-2xl font-bold text-[#FF1493] mb-4">
+            Connect With Me
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {socialLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className="flex items-center gap-2 p-2 rounded-lg hover:bg-pink-50 transition-colors"
+              >
+                <span className="text-[#FF1493]">{link.icon}</span>
+                <span className="text-gray-700">{link.label}</span>
+              </a>
+            ))}
+          </div>
+        </Card>
+
+        {/* Additional Links */}
+        <Card className="p-6 border-4 border-[#FF69B4] bg-white shadow-[8px_8px_0px_0px_rgba(255,105,180)]">
+          <h2 className="text-2xl font-bold text-[#FF1493] mb-4">More</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <Button
+              variant="outline"
+              className="border-2 border-[#FF69B4] hover:bg-pink-50"
+            >
+              <Calendar className="mr-2" /> Schedule a Meeting
+            </Button>
+            <Button
+              variant="outline"
+              className="border-2 border-[#FF69B4] hover:bg-pink-50"
+            >
+              <Heart className="mr-2" /> Donate
+            </Button>
+            <Button
+              variant="outline"
+              className="border-2 border-[#FF69B4] hover:bg-pink-50"
+            >
+              <TrendingUp className="mr-2" /> TradingView Charts
+            </Button>
+          </div>
+        </Card>
+
+        {/* Projects */}
+        <Card className="p-6 border-4 border-[#FF69B4] bg-white shadow-[8px_8px_0px_0px_rgba(255,105,180)]">
+          <h2 className="text-2xl font-bold text-[#FF1493] mb-4">Projects</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {["Marssmarsshan", "Fizzles", "Forgetful Bob"].map((project) => (
+              <Button
+                key={project}
+                variant="outline"
+                className="border-2 border-[#FF69B4] hover:bg-pink-50"
+              >
+                <Code className="mr-2" /> {project}
+              </Button>
+            ))}
+          </div>
+        </Card>
+      </div>
+    </main>
+  )
+}
