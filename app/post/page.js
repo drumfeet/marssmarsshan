@@ -7,7 +7,7 @@ export default function RedirectPage() {
 
   useEffect(() => {
     router.replace(
-      "https://drumfeet.notion.site/Comment-17f45d53d2b880b694e6cfd59a77076c?pvs=4"
+      "https://docs.google.com/forms/d/e/1FAIpQLSfZmyznQRwKG4WadBroBjRzMrzy7fi2NnYF3dHsEQMmpUleWg/viewform?usp=header"
     )
   }, [router])
 
